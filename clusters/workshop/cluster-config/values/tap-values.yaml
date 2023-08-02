@@ -19,6 +19,9 @@ tap_install:
       - workshops.learningcenter.tanzu.vmware.com
       - eventing.tanzu.vmware.com
 
+    cnrs:
+      default_tls_secret: contour-tls/tls
+      domain_template: "{{.Name}}-{{.Namespace}}.{{.Domain}}" # this is a go-template
     tap_gui:
       service_type: ClusterIP
       ingressEnabled: "true"
@@ -26,3 +29,6 @@ tap_install:
         auth:
           allowGuestAccess: true
           environment: development
+      tls:
+        namespace: contour-tls
+        secretName: tls
