@@ -7,7 +7,7 @@ tap_install:
       ingress_domain: gitops.dyang.link
       ingress_issuer: ""
       image_registry:
-        project_path: tapgitopsdgpkl.azurecr.io  # Image registry project path (e.g. myregistry.azurecr.io/tap/tap-images)
+        project_path: tapgitopsdgpkl.azurecr.io/tap/tap-images  # Image registry project path (e.g. myregistry.azurecr.io/tap/tap-images)
         username: tapgitopsdgpkl  # Registry username
       kubernetes_version: 1.25.11  # Kubernetes version (e.g. 1.25.9)
 
