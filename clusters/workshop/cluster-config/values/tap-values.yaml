@@ -32,3 +32,17 @@ tap_install:
       tls:
         namespace: contour-tls
         secretName: tls
+
+    namespace_provisioner:
+      controller: false
+      sync_period: 30s
+      # configure a repo that defines which namespaces should exist
+      # for simplicity, it's the same one we have been using
+      gitops_install:
+        ref: origin/main
+        subPath: clusters/workshop/cluster-config/namespace-provisioner/namespaces
+        url: https://github.com/ydaoqi/workshop-clusters.git
+        secretRef:
+          name: sync-git
+          namespace: tanzu-sync
+          create_export: true
