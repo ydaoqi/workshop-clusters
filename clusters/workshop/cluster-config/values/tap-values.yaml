@@ -23,6 +23,7 @@ tap_install:
       default_tls_secret: contour-tls/tls
       domain_template: "{{.Name}}-{{.Namespace}}.{{.Domain}}" # this is a go-template
     tap_gui:
+      metadataStoreAutoconfiguration: true
       service_type: ClusterIP
       ingressEnabled: "true"
       app_config:
@@ -66,3 +67,25 @@ tap_install:
         name: lsp-push-credentials
         namespace: tap-install
         create_export: true
+
+    supply_chain: testing_scanning
+    
+    metadata_store:
+      app_service_type: ClusterIP
+      ns_for_export_app_cert: "*"
+
+    scanning:
+      metadataStore:
+        url: ""
+
+    grype:
+      targetImagePullSecret: registry-credentials
+
+    ootb_supply_chain_testing_scanning:
+      gitops:
+        ssh_secret: git-https
+        branch: main
+        commit_message: "Update from TAP Supply Chain Choreographer"
+        server_address: https://github.com/
+        repository_owner: ydaoqi # github-account
+        repository_name: tap-deliveries

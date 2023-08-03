@@ -1,4 +1,5 @@
 #@data/values
 ---
 namespaces:
-  - name: developer-ns
+  #- name: developer-ns
+  - name: workload-ns
