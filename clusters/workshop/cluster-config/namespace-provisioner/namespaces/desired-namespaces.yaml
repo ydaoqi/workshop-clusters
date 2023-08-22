@@ -3,4 +3,5 @@
 namespaces:
 #! Note: ytt does not allow plain yaml comment sign #. Use #! instead.
   #!- name: developer-ns
+  - name: developer-ns
   - name: workload-ns
