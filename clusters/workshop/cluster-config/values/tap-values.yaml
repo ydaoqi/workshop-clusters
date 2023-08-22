@@ -30,6 +30,10 @@ tap_install:
         auth:
           allowGuestAccess: true
           environment: development
+        catalog:
+          locations:
+            - type: url
+              target: https://github.com/ydaoqi/tanzu-java-web-app2/blob/main/catalog/catalog-info.yaml
       tls:
         namespace: contour-tls
         secretName: tls
