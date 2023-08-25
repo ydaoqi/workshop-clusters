@@ -10,8 +10,8 @@ spec:
 
     # Accepted Values: "Critical", "High", "Medium", "Low", "Negligible", "UnknownSeverity"
     # notAllowedSeverities := ["Critical", "High", "UnknownSeverity"]
-    notAllowedSeverities := []
-    ignoreCves := []
+    notAllowedSeverities := ["Critical", "High"]
+    ignoreCves := ["GHSA-mjmj-j48q-9wg2"]
 
     contains(array, elem) = true {
       array[_] = elem
