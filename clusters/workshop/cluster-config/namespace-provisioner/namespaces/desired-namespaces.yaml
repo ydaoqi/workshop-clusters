@@ -5,3 +5,6 @@ namespaces:
   #!- name: developer-ns
   - name: developer-ns
   - name: workload-ns
+  - name: app
+  
+  
